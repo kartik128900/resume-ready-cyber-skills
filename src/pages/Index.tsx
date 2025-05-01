@@ -1,13 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from "react";
+import Layout from "@/components/Layout";
+import SecurityMetrics from "@/components/SecurityMetrics";
+import VulnerabilityScanner from "@/components/VulnerabilityScanner";
+import NetworkTraffic from "@/components/NetworkTraffic";
+import PasswordAnalyzer from "@/components/PasswordAnalyzer";
+import ThreatFeed from "@/components/ThreatFeed";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <Layout>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold">Cybersecurity Dashboard</h1>
+        <p className="text-muted-foreground">Security status overview and tools</p>
       </div>
-    </div>
+
+      <div className="space-y-6">
+        <SecurityMetrics />
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          <VulnerabilityScanner />
+          <NetworkTraffic />
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          <PasswordAnalyzer />
+          <ThreatFeed />
+        </div>
+      </div>
+    </Layout>
   );
 };
 
